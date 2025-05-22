@@ -1,0 +1,303 @@
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(247, 247, 247);
+}
+
+.ls {
+  background-image: url('/landscape.jpg'); /* ga perlu 'public/' yaa */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 38vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(112, 150, 191, 0.5); /* biru transparan */
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background-image: url('/UI To Do App.png'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 100%;
+}
+
+.input {
+  width: 610px;
+  height: 80px;
+  background-color: white;
+  border-radius: 13px;
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.input input {
+  width: 85%;
+  border: 0;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+
+.input input:focus {
+  outline: none;
+  border-color: transparent; /* atau bisa juga border: none; */
+  box-shadow: none; /* supaya gak ada efek bayangan */
+}
+
+.btn-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #7096bf; /* biru kalem */
+  border: none;
+  border-radius: 10px; /* bikin sudut agak melengkung */
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.btn-icon:hover {
+  background-color: #5270b0; /* warna biru gelap pas hover */
+}
+
+.btn-icon img {
+  width: 20px;  /* sesuaikan ukuran icon */
+  height: 20px;
+  object-fit: contain;
+}
+
+.index {
+  width: 610px;
+  height: 420px;
+  max-height: 420px;
+  overflow-y: scroll;
+  background-color: white;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+
+  
+}
+
+.index ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.index::-webkit-scrollbar {
+  display: none; /* Safari & Chrome */
+}
+
+.index .item {
+  width: 100%;
+  height: 60px;
+  padding-left: 15px;
+  padding-right: 20px;
+  border-bottom: 2px solid #0000001c;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index .item span.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.status {
+  width: 610px;
+  height: 40px;
+  background-color: white;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+
+  border-top: 2px solid #0000001c;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+.left-status {
+  font-size: 13px;
+  opacity: 30%;
+}
+
+.clear-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 13px;
+  font-family: 'Montserrat';
+  opacity: 30%;
+}
+
+.clear-btn:hover {
+  opacity: 100%;
+  transition: all ease 0.2s;
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Montserrat';
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex-grow: 1;
+  user-select: none;
+  position: relative;
+}
+
+.custom-checkbox input {
+  position: absolute; /* biar ngga ganggu layout */
+  opacity: 0;         /* sembunyiin checkbox asli */
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-checkbox .checkmark {
+  height: 30px;  /* ukuran bulatan */
+  width: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid rgba(128, 128, 128, 0.192);
+  position: relative;
+  transition: background-color 0.3s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* waktu belum dicentang, kosongin aja background image */
+.custom-checkbox input:not(:checked) + .checkmark {
+  background-image: none;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(0.7); }
+  50%  { transform: scale(1.3); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* waktu dicentang, tampilkan gambar icon */
+.custom-checkbox input:checked + .checkmark {
+  
+  border-color: white;
+  background-image: url('public/check.png'); 
+  animation: bounce 0.4s ease;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ff4d4d;
+}
+
+.item .delete-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item:hover .delete-btn {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* Styling scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(112, 150, 191, 0.7);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(112, 150, 191, 1);
+}
+
+.list-enter-active, .list-leave-active {
+  transition: all 0.3s ease;
+}
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.list-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+.list-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
