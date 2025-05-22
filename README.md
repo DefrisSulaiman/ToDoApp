@@ -1,5 +1,20 @@
-# Vue 3 + Vite
+# ✅ To-Do List App
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple, sleek, and super helpful task manager built to help you stay productive and focused (dan nggak rebahan mulu 🛋️✨). Whether you're tracking daily chores, school assignments, or world domination plans—this To-Do app has your back! 💼🧠🔥
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🌟 Fitur Utama
+
+- ✍️ Tambah, edit, dan hapus tugas
+- ✅ Tandai tugas yang sudah selesai
+- 🕒 Tampilkan tugas berdasarkan status (Selesai / Belum)
+- 💾 Data tersimpan secara lokal (atau bisa diintegrasi ke backend nanti)
+
+## 📸 Preview
+ 
+![Screenshot](public/Screenshot.png)
+
+## 🚀 Cara Menjalankan
+
+1. Clone repo ini:
+   ```bash
+   git clone https://github.com/username/todo-app.git
